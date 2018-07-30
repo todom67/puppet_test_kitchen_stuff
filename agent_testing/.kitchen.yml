@@ -1,0 +1,52 @@
+---
+driver:
+  name: gce
+  project: kohls-infraci-sbx
+  region: us-central1
+  network: sandbox
+  subnet: sandbox-ci-cd-prv01
+  disk_size: 40
+  use_private_ip: true
+  tags:
+    - test-kitchen
+
+provisioner:
+  name: puppet_agent
+  require_chef_for_busser: false
+
+verifier:
+  ruby_bindir: '/opt/puppetlabs/puppet/bin'
+  sudo: false
+  output: results/%{platform}_%{suite}_inspec.yaml
+  format: documentation
+  name: inspec
+
+platforms:
+  - name: rhel7
+    driver:
+      image_project: kohls-infraci-sbx
+      image_name: kohls-rhel7-puppetci-1495490509
+  - name: rhel6
+    driver:
+      image_project: kohls-infraci-sbx
+      image_name: kohls-rhel6-puppetci-1495489777
+
+transport:
+  username: TKMAITG
+  ssh_key: ~/.ssh/google_compute_engine
+
+suites:
+  - name: pab7
+    provisioner:
+      puppet_agent_command: sudo /usr/local/bin/activate_pos.sh --pup-env nonprod --server puppet.kohls.com --ca-server puppetmom.kohls.com --location gcp_central_us --flavor base --role base_rhel7 --fact-env nonprod
+    verifier:
+      inspec_tests:
+        - path: agent_tests/acceptance/
+    excludes: ['rhel6']
+  - name: pab6
+    provisioner:
+      puppet_agent_command: sudo /usr/local/bin/activate_pos.sh --pup-env nonprod --server puppet.kohls.com --ca-server puppetmom.kohls.com --location gcp_central_us --flavor base --role base_rhel6 --fact-env nonprod
+    verifier:
+      inspec_tests:
+        - path: agent_tests/acceptance/
+    excludes: ['rhel7','rhel6']

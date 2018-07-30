@@ -1,0 +1,7 @@
+**** THIS FILE ALSO MANAGED BY PUPPET!!! ****
+DO NOT ALTER THIS FILE!
+
+Here is some info that we have gleaned from this machines facter facts:
+Hostname: <%= $facts[fqdn]  %>
+Operating System: <%= $facts[operatingsystem]  %>
+IP Address: <%= $facts[ipaddress]  %>
