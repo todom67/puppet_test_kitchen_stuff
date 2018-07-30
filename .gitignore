@@ -1,0 +1,6 @@
+agent_testing/.kitchen/
+agent_testing/.kitchen/logs/
+agent_testing/results/
+module_testing/.kitchen/
+module_testing/.kitchen/logs/
+module_testing/results/
