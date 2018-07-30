@@ -29,7 +29,7 @@ up and running.
 - Clone this repository to your workstation:
 
   ```shell
-     git clone git@github.kohls.com:Puppet/puppet_test_kitchen_stuff.git
+     git clone git@github.com:todom67/puppet_test_kitchen_stuff.git
      cd puppet_test_kitchen_stuff
   ```
 
