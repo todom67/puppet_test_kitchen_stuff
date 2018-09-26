@@ -71,7 +71,7 @@ will appear.
 
 ## SSH Keys
 
-In order to bootstrap Linux nodes, you need to have SSH keys setup correctly. Here at Kohl's it will need to be added to the _my_project-infraci-sbx_ project metadata.
+In order to bootstrap Linux nodes, you need to have SSH keys setup correctly. For example, in GCP it will need to be added to the _my_project-infraci-sbx_ project metadata.
 
 ## Next Steps
 

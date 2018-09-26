@@ -104,7 +104,7 @@
     latest version of puppet on our provisioned machine. Setting this to false or omitting it will install puppet 3.8
     on the GCE host.
 
-    *** NOTE: puppet is already baked into the Kohl's sandbox images, but omitting this setting will cause test-kitchen to attempt an install of puppet 3.8 which breaks the puppet apply command ***
+    *** NOTE: puppet is already baked into the sandbox images that we are using, but omitting this setting will cause test-kitchen to attempt an install of puppet 3.8 which breaks the puppet apply command ***
 
   - #### verifier
     This is the testing software that will be used. By default, serverspec is installed and run. Our configuration will be using [InSpec](https://www.inspec.io/).
@@ -114,7 +114,7 @@
     We then specify that we are using inspec and not the default serverspec: `name: inspec`.
 
   - #### platforms
-    This can be any operating system platform you wish. Since we are using the Google Compute Platform and our the Kohl's Packer images, we must specify the GCP project name and the image name in the `drivers:` section.
+    This can be any operating system platform you wish. Since this was developed using the Google Compute Platform and Packer images, we must specify the GCP project name and the image name in the `drivers:` section.
 
   - #### transport
     We are using the default transport of ssh and need to specify which key to use for logins. This should be a key that is in the project metadata, and its associated username.
