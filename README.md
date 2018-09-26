@@ -216,10 +216,10 @@ To see a test run using the sample code a profile from the control repo, do the 
      You will see quite a bit of output as GCP builds and spins up the machines, installs and then runs the puppet manifests. It should end similar to this:
 
      ```shell
-             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-jenkins-mobility@kohls.com]/ensure: created
-             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-jenkins-cfmc@kohls.com]/ensure: created
-             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-QCoE-Automation@kohls.com]  /ensure: created
-             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-Jenkins-CI@kohls.com ]/ensure:  created
+             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-jenkins-mobility@my_project.com]/ensure: created
+             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-jenkins-cfmc@my_project.com]/ensure: created
+             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-QCoE-Automation@my_project.com]  /ensure: created
+             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-Jenkins-CI@my_project.com ]/ensure:  created
              Info: Stage[main]: Unscheduling all events on Stage[main]
              Notice: Applied catalog in 561.48 seconds
              Notice: /Service[puppet]/ensure: ensure changed 'stopped' to 'running'

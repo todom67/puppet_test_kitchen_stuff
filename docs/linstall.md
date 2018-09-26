@@ -15,7 +15,7 @@ Directions for setting up a fully configured [Kitchen-puppet](https://github.com
 - ### Software platforms
   A linux Kitchen-puppet setup relies on an installation of [Puppet](https://puppet.com/) (including Facter and Hiera), and [Ruby](https://www.ruby-lang.org/en/). Additionally, we will need to have git installed for our dev work.
 
-  - Most Kohls machines have puppet baked in and as such, we can leverage the puppet ruby installation.
+  - Most my_project machines have puppet baked in and as such, we can leverage the puppet ruby installation.
     - Verify ruby installation: from the terminal enter:
             ```bash
             ruby --version; gem --version
@@ -58,7 +58,7 @@ Directions for setting up a fully configured [Kitchen-puppet](https://github.com
 
   These can all be installed at once:
   ```shell
-      gem install  -p https://proxy.kohls.com:3128 test-kitchen <kitchen-vagrant> OR <kitchen-google> librarian-puppet kitchen-puppet kitchen-inspec
+      gem install  -p https://proxy.my_project.com:3128 test-kitchen <kitchen-vagrant> OR <kitchen-google> librarian-puppet kitchen-puppet kitchen-inspec
   ```
   This will also install all the necessary dependencies.
 
@@ -79,4 +79,4 @@ Directions for setting up a fully configured [Kitchen-puppet](https://github.com
 ## Next step
 
 - [Configure directory structure for module testing using kitchen-puppet](kpdirectorysetup.md) OR
-- [Set up Roles/Profiles testing using the puppet agent and the Kohls Puppet infrastructure](agentsetup.md)
+- [Set up Roles/Profiles testing using the puppet agent and the my_project Puppet infrastructure](agentsetup.md)

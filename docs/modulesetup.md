@@ -40,7 +40,7 @@
       ---
       driver:
         name: gce
-        project: kohls-infraci-sbx
+        project: my_project-infraci-sbx
         region: us-central1
         network: sandbox
         subnet: sandbox-ci-cd-prv01
@@ -68,8 +68,8 @@
       platforms:
         - name: infraci-sbx-rhel-7
           driver:
-            image_project: kohls-infraci-sbx
-            image_name: kohls-rhel7-puppetci-1495490509
+            image_project: my_project-infraci-sbx
+            image_name: my_project-rhel7-puppetci-1495490509
 
       transport:
         username: <username>

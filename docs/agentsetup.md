@@ -39,7 +39,7 @@
       ---
       driver:
         name: gce
-        project: kohls-infraci-sbx
+        project: my_project-infraci-sbx
         region: us-central1
         network: sandbox
         subnet: sandbox-ci-cd-prv01
@@ -62,12 +62,12 @@
      platforms:
      - name: rhel7
          driver:
-         image_project: kohls-infraci-sbx
-         image_name: kohls-rhel7-puppetci-1495490509
+         image_project: my_project-infraci-sbx
+         image_name: my_project-rhel7-puppetci-1495490509
      - name: rhel6
          driver:
-         image_project: kohls-infraci-sbx
-         image_name: kohls-rhel6-puppetci-1495489777
+         image_project: my_project-infraci-sbx
+         image_name: my_project-rhel6-puppetci-1495489777
 
     transport:
       username: TKMAITG
@@ -76,14 +76,14 @@
     suites:
     - name: pab7
         provisioner:
-          puppet_agent_command: sudo /usr/local/bin/activate_pos.sh --pup-env nonprod --server puppet.kohls.com --ca-server puppetmom.kohls.com --location gcp_central_us --flavor base --role base_rhel7 --fact-env nonprod
+          puppet_agent_command: sudo /usr/local/bin/activate_pos.sh --pup-env nonprod --server puppet.my_project.com --ca-server puppetmom.my_project.com --location gcp_central_us --flavor base --role base_rhel7 --fact-env nonprod
         verifier:
           inspec_tests:
             - path: agent_tests/acceptance/
         excludes: ['rhel6']
     - name: pab6
         provisioner:
-          puppet_agent_command: sudo /usr/local/bin/activate_pos.sh --pup-env nonprod --server puppet.kohls.com --ca-server puppetmom.kohls.com --location gcp_central_us --flavor base --role base_rhel6 --fact-env nonprod
+          puppet_agent_command: sudo /usr/local/bin/activate_pos.sh --pup-env nonprod --server puppet.my_project.com --ca-server puppetmom.my_project.com --location gcp_central_us --flavor base --role base_rhel6 --fact-env nonprod
         verifier:
           inspec_tests:
             - path: agent_tests/acceptance/
@@ -140,7 +140,7 @@
     suites:
       - name: pab7
           provisioner:
-            puppet_agent_command: sudo /usr/local/bin/activate_pos.sh --pup-env nonprod --server puppet.kohls.com --ca-server puppetmom.kohls.com --location gcp_central_us --flavor base --role base_rhel7 --fact-env nonprod
+            puppet_agent_command: sudo /usr/local/bin/activate_pos.sh --pup-env nonprod --server puppet.my_project.com --ca-server puppetmom.my_project.com --location gcp_central_us --flavor base --role base_rhel7 --fact-env nonprod
           verifier:
             inspec_tests:
               - path: agent_tests/acceptance/
@@ -157,10 +157,10 @@
   You will see a lot of output as test-kitchen calls GCP to build and spin up machines and then run the puppet manifests. The last several lines should be similar to this:
 
    ```shell
-             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-jenkins-mobility@kohls.com]/ensure: created
-             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-jenkins-cfmc@kohls.com]/ensure: created
-             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-QCoE-Automation@kohls.com]  /ensure: created
-             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-Jenkins-CI@kohls.com ]/ensure:  created
+             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-jenkins-mobility@my_project.com]/ensure: created
+             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-jenkins-cfmc@my_project.com]/ensure: created
+             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-QCoE-Automation@my_project.com]  /ensure: created
+             Notice: /Stage[main]/Ei_unix_service_account::Nzintgr/Ssh_authorized_key[nzintgr-Jenkins-CI@my_project.com ]/ensure:  created
              Info: Stage[main]: Unscheduling all events on Stage[main]
              Notice: Applied catalog in 561.48 seconds
              Notice: /Service[puppet]/ensure: ensure changed 'stopped' to 'running'

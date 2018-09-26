@@ -101,14 +101,14 @@ Directions for setting up a fully configured [Kitchen-puppet](https://github.com
 
   REMEDIATION: With some minor variations here are the two commands that need to be run:
   - ```shell
-    setx SSL_CERT_DIR C:\Users\<Kohls 'tk' ID>\AppData\Local\Programs\Git\mingw64\ssl\certs
+    setx SSL_CERT_DIR C:\Users\<my_project 'tk' ID>\AppData\Local\Programs\Git\mingw64\ssl\certs
     ```
   - ```shell
-    setx SSL_CERT_FILE C:\Users\<Kohls 'tk' ID>\AppData\Local\Programs\Git\mingw64\ssl\cert.pem
+    setx SSL_CERT_FILE C:\Users\<my_project 'tk' ID>\AppData\Local\Programs\Git\mingw64\ssl\cert.pem
     ```
     This will set these paths permanently. Close and reopen the command line to continue.
 
 ## Next step
 
 - [Configure directory structure for module testing using kitchen-puppet](kpdirectorysetup.md) OR
-- [Set up Roles/Profiles testing usign the puppet agent and the Kohls Puppet infrastructure](agentsetup.md)
+- [Set up Roles/Profiles testing usign the puppet agent and the my_project Puppet infrastructure](agentsetup.md)

@@ -41,7 +41,7 @@ The easiest way to get all of the above configured is to download and install th
   - copy the verification code and paste it back into your command window.
 - You will now see a message stating that you are logged in as: [username].
 - A list of available projects will scroll through, along with a warning message.
-  - Enter `kohls-infraci-sbx` after the project prompt.
+  - Enter `my_project-infraci-sbx` after the project prompt.
 - You will then be prompted to configure a default zone,
   - choose one of the us-central-xx zones.
 - The configuration will finish and you will now have successfully initialized the GC SDK.
@@ -71,7 +71,7 @@ will appear.
 
 ## SSH Keys
 
-In order to bootstrap Linux nodes, you need to have SSH keys setup correctly. Here at Kohl's it will need to be added to the _kohls-infraci-sbx_ project metadata.
+In order to bootstrap Linux nodes, you need to have SSH keys setup correctly. Here at Kohl's it will need to be added to the _my_project-infraci-sbx_ project metadata.
 
 ## Next Steps
 
